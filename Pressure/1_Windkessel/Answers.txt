@@ -1,0 +1,5 @@
+---2 - element Windkessel---
+Pressures:
+Systolic = 120 mmHg
+Diastolic = 80 mmHg
+Pulse = 40 mmHg (120-80)
