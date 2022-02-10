@@ -10,3 +10,14 @@ New pressures:
 Systolic = 115 mmHg
 Diastolic = 85 mmHg
 Pulse = 30 mmHg
+
+---Other Windkessel Models---
+Differences:
+First is a 2-element Windkessel model, second is 3-element and third is a 4-element.
+
+2-element:
+Sin-like curve 
+3-element:
+Has a linear end to all pressure drops. Higher amplitude
+4-element:
+Similiar to 3-element but "bounces" before going linearly down. Similar amplitude to 2-element. Closer to reality.
