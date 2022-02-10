@@ -3,3 +3,10 @@ Pressures:
 Systolic = 120 mmHg
 Diastolic = 80 mmHg
 Pulse = 40 mmHg (120-80)
+
+---Aging process---
+Set C1 to 2
+New pressures:
+Systolic = 115 mmHg
+Diastolic = 85 mmHg
+Pulse = 30 mmHg
