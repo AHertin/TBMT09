@@ -1,7 +1,7 @@
 --- Heart model ---
 2)
-The Aortic valve flow corresponds to ventricular outflow. (0.35s) - Diastole
-Mitral valve flow is the ventricular inflow. (0.55s) - Systole
+The Aortic valve flow corresponds to ventricular outflow. (0.35s) - Systole
+Mitral valve flow is the ventricular inflow. (0.55s) - Diastole
 
 7) a)
 

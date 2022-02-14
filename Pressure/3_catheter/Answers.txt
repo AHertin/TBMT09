@@ -1,0 +1,17 @@
+--- Catheter model ---
+1) 
+We can influence length (l) radius(r) and compliance(C).
+For length we would rather have a slightly too long than too short.
+For radius we want something that is not too big (external radius) and does not 
+impede with measurments (internally)
+For compliance we want as a value as low as possible.
+
+4)
+Catheter 2 and 3 has good looking frequency response plots. It is possible that the peak 
+for catheter 2 will impact it negatively because it is too high. Therefore 3 is best.
+
+5)
+Catheter 1 is overdamped
+Catheter 2 is underdamped
+Catheter 3 is good, maybe slightly underdamped
+Catheter 4 is decent, a bit more underdamped than catheter 3

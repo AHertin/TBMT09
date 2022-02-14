@@ -1,4 +1,4 @@
-freq = 1; %frquency in [1/s]
+freq = 159.5676; %frquency in [1/s]
 t = [0:0.01:16]';
 i = zeros(length(t),1);
 for j=1:length(t)
