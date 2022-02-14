@@ -1,0 +1,13 @@
+--- Heart model ---
+2)
+The Aortic valve flow corresponds to ventricular outflow. (0.35s) - Diastole
+Mitral valve flow is the ventricular inflow. (0.55s) - Systole
+
+7) a)
+
+EDV +- 10 ml with high/low preload. None with afterload
+ESV +- 11 ml with high/low afterload. None with preload
+
+Stroke Volume = EDV - ESV:
+High afterload gives lower SV. Low gives higher SV
+High preload gives higher SV. Low gives lower SV

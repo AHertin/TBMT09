@@ -15,9 +15,9 @@ LVvol = zeros(length(t),1)'; %preallocate the variable
 dt=t(2); % dt is the step size
 for i = 1:length(t)
     if i == 1
-        LVvol(i)= 0; % Enter the ventricular volume at time step 1
+        LVvol(i)= EDV; % Enter the ventricular volume at time step 1
     else
-        LVvol(i)= 0; % Enter the formula to calculate the volume
+        LVvol(i)= MVflow(i) * dt - AVflow(i) * dt + LVvol(i-1); % Enter the formula to calculate the volume
     end
 end
 
@@ -38,7 +38,7 @@ ylabel('Elastance (mmHG/ml)')
 title('Left Venticular Elastance')
 
 %% calculate pressure curve
-LVpressure = 0;
+LVpressure = E.*LVvol;
 figure
 plot(t,LVpressure)
 xlabel('Time (s)')
