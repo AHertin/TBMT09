@@ -64,6 +64,10 @@ axis tight;
 TV = 0;
 VC = 0;
 
+% TV ~= First max - first min
+% VC ~= Maxpeak - minpeak 
+% ( see: https://en.wikipedia.org/wiki/Tidal_volume#/media/File:Lungvolumes_Updated.png )
+
 fprintf('Computed tidal volume: %4.3f [L] \n', TV)
 fprintf('Computed vital capacity: %4.3f [L] \n', VC)
 
