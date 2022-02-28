@@ -2,8 +2,8 @@
 Simulation of a two compartment lung with volumes
 V1 and V2 and relative ventilation DV1 and DV2.
 Concentration of nitrogen is C1 and C2, initially
-C1 = C2 = 80%. Expired gas concentration, Cet, is a 
-weighted sum of C1 and C2, weighted by their relative 
+C1 = C2 = 80%. Expired gas concentration, Cet, is a
+weighted sum of C1 and C2, weighted by their relative
 ventilations DV1 and DV2. Add your changes at marked places.
 %}
 
@@ -21,16 +21,21 @@ N = [];
 Vdaw = 0.1;                                 % Only used in exercise 5
 
 for i = 1:size(DV1,2)         % for all the three lung inhomogeneity cases
-   j = 1;
-   while Cet(j, i) > 0.02
+    j = 1;
+    while Cet(j, i) > 0.02
         j = j + 1;
         % dummy C1, C2 and Cet. Replace definitions with yours
-         C1(j, i) = C1(j-1,i) - 0.01;
-         C2(j, i) = C2(j-1,i) - 0.02;
-         Cet(j,i) = C1(j-1,i) + C2(j-1,i);
-   end
-   N(i) = j - 1;    % N is the number of breaths  
-end   
+        C1(j, i) = C1(j-1,i) - 0.01;
+        C2(j, i) = C2(j-1,i) - 0.02;
+        Cet(j,i) = C1(j-1,i) + C2(j-1,i);
+        % Better ones would be something like
+        % Cn(j)  = (Vn * C(j-1)) / (Vn + DVn(i))
+        % Cet(j) = C1(j) + C2(j)
+        % Where n = [1, 2]
+        
+    end
+    N(i) = j - 1;    % N is the number of breaths
+end
 
 x1=1:N(1);
 y1=C1(x1,1);
