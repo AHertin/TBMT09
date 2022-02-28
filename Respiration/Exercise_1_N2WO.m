@@ -25,13 +25,18 @@ for i = 1:size(DV1,2)         % for all the three lung inhomogeneity cases
     while Cet(j, i) > 0.02
         j = j + 1;
         % dummy C1, C2 and Cet. Replace definitions with yours
-        C1(j, i) = C1(j-1,i) - 0.01;
-        C2(j, i) = C2(j-1,i) - 0.02;
-        Cet(j,i) = C1(j-1,i) + C2(j-1,i);
+%         C1(j, i) = C1(j-1,i) - 0.01;
+%         C2(j, i) = C2(j-1,i) - 0.02;
+%         Cet(j,i) = C1(j-1,i) + C2(j-1,i);
+
         % Better ones would be something like
         % Cn(j)  = (Vn * C(j-1)) / (Vn + DVn(i))
         % Cet(j) = C1(j) + C2(j)
         % Where n = [1, 2]
+        C1(j, i) = (V1 .* C1(j-1,i)) ./ (V1 + DV1(i)); % From lab compendium
+        C2(j, i) = (V2 .* C2(j-1,i)) ./ (V2 + DV2(i));
+        Cet(j,i) = (DV1(i) .* C1(j,i) + DV2(i) .* C2(j,i)) ./ 0.5;
+
         
     end
     N(i) = j - 1;    % N is the number of breaths

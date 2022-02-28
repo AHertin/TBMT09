@@ -19,6 +19,8 @@ STEPS
 4 - compute tidal and vital capacity volumes in the signal
 %}
 
+close all;
+
 %% 1 - Import flow file and make it usable 
 
 flow = readmatrix('Students/Exercise_2_pneum_flow.txt', 'NumHeaderLines', 1);
@@ -46,7 +48,7 @@ add it to original flow signal to set it to 0 in case there is no flow.
 All this helps with the calculation of the volume.
 %}
 
-driftValue = mean(flow_calibrated(1:100));
+driftValue = mean(flow_calibrated(3000:3600));
 flow_calibrated = flow_calibrated - driftValue;
 
 % check if drift is removed
@@ -61,12 +63,12 @@ axis tight;
 
 %% 4 - Complete here for the calculation of Tidal volume and Vital capacity
 
-TV = 0;
-VC = 0;
+% TV = 0;
+% VC = 0;
 
-% TV ~= First max - first min
-% VC ~= Maxpeak - minpeak 
-% ( see: https://en.wikipedia.org/wiki/Tidal_volume#/media/File:Lungvolumes_Updated.png )
+TV = sum(flow_calibrated(1480:1690))./100;
+VC = sum(flow_calibrated(6483:6761))./100;
+
 
 fprintf('Computed tidal volume: %4.3f [L] \n', TV)
 fprintf('Computed vital capacity: %4.3f [L] \n', VC)

@@ -19,6 +19,7 @@ STEPS
 2 - compute the N2 flow and dispaly recorded values
 3 - compute the N2 volume for the wash-out and the maximum ventilation phases. 
 %}
+close all; clear variables;
 
 %% 1 - Import recordings
 flow = dlmread('Students/Exercise_2_flow.txt');
@@ -40,10 +41,10 @@ axis([0 31340 0 80]);
 % ####### Complete here with your calculation of the N2 flow #######
 % ###### START
 
-% flow_N2 = ...
+flow_N2 = flow .* (FN2 ./ 100);
 
 % uncomment subplot after your flow_N2 implementation
-% subplot(3,1,3),plot(flow_N2);
+subplot(3,1,3),plot(flow_N2);
 
 % ###### END
 subplot(3,1,3),ylabel('Nitrogen flow [mL/s]','FontWeight','Bold');
@@ -55,8 +56,8 @@ axis([0 31340 -300 300]);
 % ####### Complete here with your calculation of VN2_wo and VN2_mv #######
 % ###### START
 
-VN2_wo = 0;
-VN2_mv = 0;
+VN2_wo = -sum(flow_N2(1:28080))./100;
+VN2_mv = -sum(flow_N2(28080:end))./100;
 
 % ###### END
 
